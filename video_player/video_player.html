@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player de Vídeo</title>
+    <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+    <div class="player-container">
+        <h1>Player de Vídeo (estilo Youtube)</h1><br>
+        <video id="video_main" ontimeupdate="getTime()" onplaying="endTime()">
+            <source src="music.mp4">
+        </video>
+
+        <div class="controls">
+            <button id="pause_btn" onclick="pauseButton()">▶</button>
+            <p id="speed"></p>
+            <input type="range" min="0" max="2" step="0.25" id="range_btn" value="1">
+            <button id="mute" onclick="muteSilence()">🔊</button>
+            <input type="range" min="0" max="1" step="0.1" id="volume_btn" value="1">
+            <label id="currently_time"></label>
+            <label>/</label>
+            <label id="end_time"></label>
+            <button id="full_btn">
+                <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 9V4H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M20 9V4H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M4 15V20H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M20 15V20H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+
+    </div>
+    
+    <script src="script_player.js"></script>
+</body>
+</html>
